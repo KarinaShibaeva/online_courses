@@ -21,7 +21,6 @@ class Appeal(models.Model):
     contact = models.CharField(max_length=128, verbose_name="ФИО")
     email = models.EmailField(verbose_name="Электронная почта", blank=False)
     status = models.CharField(max_length=100, verbose_name='Статус', choices=STATUS_CHOICE)
-    uid = models.CharField(max_length=64, blank=False, null=False, db_index=True, unique=True)
     date = models.DateTimeField("Дата отправки", auto_now_add=True)
 
     def __iter__(self):
