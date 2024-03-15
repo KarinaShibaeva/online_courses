@@ -1,0 +1,35 @@
+body{
+    font-family: 'Century Gothic';
+}
+.main-block1{
+    background-image: url(/media/fon.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.main-block1-btn{
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 30px;
+    border-radius: 0;
+}
+.block1-btn{
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: #4682B4;
+    padding: 7px;
+    font-size: 26px;
+    border-radius: 0;
+}
+.main-block1-title{
+    font-size: 100px;
+    color: #ffffff;
+}
+.main-block1-text{
+    font-size: 50px;
+    color: #ffffff;
+}
+.course-detail-block1{
+    border: 1px solid #000000;
+    border-radius: 20px;
+    height: 500px;
+}

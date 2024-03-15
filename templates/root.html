@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/media/logo.png" width="200px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-black" aria-current="page" href="{% url 'info:main' %}">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="{% url 'course:course' %}">Курсы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="{% url 'appeal:appeals' %}">Отправить заявку</a>
+        </li>
+      {% if not user.is_authenticated  %}
+        <li class="nav-item">
+          <a class="nav-link text-black" href="{% url 'register:login' %}">Вход</a>
+        </li>
+      {% endif %}
+          {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'siteinfo:main' %}">Выйти</a>
+              </li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'root.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <div class="course-detail d-flex flex-column align-items-center">
+        <h1 class="text-center mt-4">{{ pk.name }}</h1>
+        <div class="course-detail-block1 w-75 d-flex align-items-center">
+            <div class="course-detail-bock1-content d-flex flex-row align-items-center">
+                <div class="block1-description">
+                    <p class="block1-text w-50">{{ pk.description }}</p>
+                    <p class="block1-text w-50">{{ pk.start_date }} - {{ pk.end_date }}</p>
+                    <p class="block1-text w-50"><b>Стоимость: </b>{{ pk.price }}&#8381 </p>
+                    <p class="block1-text w-50"><b>Уровень сложности: </b>{{ pk.level }}</p>
+                    <p class="block1-text w-50"><b>Возратсная категория: </b>{{ pk.age }}</p>
+                    <button class="block1-btn">Записаться на курс</button>
+                </div>
+                <img src="{{ pk.image.url }}" class="w-25">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

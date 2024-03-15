@@ -1,0 +1,28 @@
+{% extends 'root.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+{% block content %}
+    <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="text-center mt-3">Курсы</h1>
+    <div class="block1 d-flex flex-wrap w-75">
+        {% for course in courses %}
+            <div class="card mt-3 ms-3" style="width: 18rem;">
+                <img src="{{ course.image.url }}" class="card-img-top" style="height: 10vw;" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ course.name }}</h5>
+                    <p class="card-text">{{ course.category }}</p>
+                    <a href="{% url 'course:course_detail' course.pk %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+</div>
+</body>
+</html>
