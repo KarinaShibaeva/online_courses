@@ -6,13 +6,5 @@
         {{ form.as_p }}
     <button type="submit">Отправить</button>
 </form>
-<script>
-document.getElementById("myForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // предотвращаем отправку формы по умолчанию
-  // Дополнительные действия, например, отправка формы через AJAX
 
-  // Выводим модальное окно с сообщением об успешной отправке
-  alert("Заявка успешно отправлена!");
-});
-</script>
 {% endblock %}

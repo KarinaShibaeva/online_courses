@@ -12,7 +12,7 @@ def submit_appeal(request):
         form = AppealForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse()
+            return render(request, 'message/notification_message.html')
     else:
         form = AppealForm()
     return render(request, 'appeal/appeal.html', {'form':form})
