@@ -18,7 +18,7 @@
                     <p class="block1-text w-50"><b>Стоимость: </b>{{ pk.price }}&#8381 </p>
                     <p class="block1-text w-50"><b>Уровень сложности: </b>{{ pk.level }}</p>
                     <p class="block1-text w-50"><b>Возратсная категория: </b>{{ pk.age }}</p>
-                    <button class="block1-btn">Записаться на курс</button>
+                    <a href="{% url 'appeal:appeals' %}"><button class="block1-btn">Записаться на курс</button></a>
                 </div>
                 <img src="{{ pk.image.url }}" class="w-25">
             </div>
